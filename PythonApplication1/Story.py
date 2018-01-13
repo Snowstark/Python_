@@ -15,6 +15,17 @@ Persons = {
          'Gender':"female",
          },
 }
+
+Persons['wsc'] =  {
+    'Hobby':'me',
+    'Location':'my home',
+    'Gender':'female',
+    }
+
+del Persons['Tom'];
+
+Persons['Biu'] = Persons.pop('wsc');
+Persons['Jerry']['Hobby'] = 'Games';
 for person,person_info in Persons.items():
    print("\nI know something about you, " + person);
    hobby = person_info['Hobby'];
@@ -23,4 +34,6 @@ for person,person_info in Persons.items():
    print("You like " + hobby.title());
    print("You live in " + location.title());
    if Gender == 'female':
-       print("I also predict that you will love me."); 
+       print("I also predict that you will love me.");
+ 
+print("HEllo");
