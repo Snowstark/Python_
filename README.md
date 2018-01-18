@@ -1,4 +1,4 @@
 # Python_
-Python study.
-About Alien_invasion
+Python study.\n
+About Alien_invasion\n
 No matter how hard and slow, Please hang on.
