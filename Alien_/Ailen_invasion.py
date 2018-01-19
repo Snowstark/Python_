@@ -23,11 +23,12 @@ def run_game():
     ship = Ship(ai_settings, screen)
     bullets = Group()
 
+
     #开始游戏的主循环
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)
+        gf.update_bullets(bullets)
         ship.update()
-        bullets.update()
         gf.update_screen(ai_settings, screen, ship, bullets)
 
 run_game()
