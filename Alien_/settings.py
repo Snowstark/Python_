@@ -13,9 +13,16 @@ class Settings():
 
         # 子弹设计
         self.bullet_speed_factor = 1
-        self.bullet_width = 3
+        self.bullet_width = 300
         self.bullet_height = 15
         self.bullet_color = 80, 60, 60
         self.bullets_allowed = 3
+
+        # 外星人设计
+        self.alien_speed_factor = 1
+        self.fleet_drop_speed_factor = 10
+        self.fleet_direction = 1
+
+
 
 
