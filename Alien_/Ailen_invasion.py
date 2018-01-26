@@ -8,6 +8,7 @@ import game_function as gf
 from pygame.sprite import Group
 from game_stats import Gamestats
 from button import Button
+from scoreboard import Scoreboard
 
 
 def run_game():
@@ -29,23 +30,23 @@ def run_game():
     alien = Alien(ai_settings,screen)
 
     # 设置背景色
-    bg_color = (230,230,230)
+    bg_color = (230, 230, 230)
 
     # 创建一艘飞船
     ship = Ship(ai_settings, screen)
     bullets = Group()
     aliens = Group()
 
-    # 创建外星人群
-    gf.create_fleet(ai_settings, screen, ship, aliens)
+    # Create the scoreboard
+    sb = Scoreboard(ai_settings, screen, stats)
 
     # 开始游戏的主循环
     while True:
-        gf.check_events(ai_settings, screen, ship, bullets, stats, play_button, aliens)
-        gf.update_screen(ai_settings, screen, ship, aliens, bullets, play_button, stats)
+        gf.check_events(ai_settings, screen, ship, bullets, stats, play_button, aliens, sb)
+        gf.update_screen(ai_settings, screen, ship, aliens, bullets, play_button, stats, sb)
         if stats.game_active:
-            gf.update_bullets(ai_settings, screen, ship, bullets, aliens)
-            gf.update_aliens(ai_settings, aliens, ship, stats, screen, bullets)
+            gf.update_bullets(ai_settings, screen, ship, bullets, aliens, stats, sb)
+            gf.update_aliens(ai_settings, aliens, ship, stats, screen, bullets, sb)
             ship.update()
 
 

@@ -13,7 +13,7 @@ class Settings():
         self.ship_speed_factor = 1
 
         # 子弹设计
-        self.bullet_width = 3
+        self.bullet_width = 300
         self.bullet_height = 15
         self.bullet_color = 80, 60, 60
         self.bullets_allowed = 3
@@ -21,11 +21,13 @@ class Settings():
 
         # 外星人设计
         self.fleet_drop_speed_factor = 10
-        self.alien_speed_factor = 1
+        self.alien_speed_factor = 10
         self.fleet_direction = 1
+        self.alien_score = 4
 
         # 游戏难度系数
         self.speedup_scale = 1.3
+        self.score_increase = 2
 
     def initialize_dynamic_settings(self):
         """初始化游戏动态参数"""
@@ -33,11 +35,13 @@ class Settings():
         self.bullet_speed_factor = 3
         self.alien_speed_factor = 1
         self.fleet_direction = 1
+        self.alien_score = 2
 
     def increase_speed(self):
         self.ship_speed_factor *= self.speedup_scale
         self.bullet_speed_factor *= self.speedup_scale
         self.alien_speed_factor *= self.speedup_scale
+        self.alien_score *= self.score_increase
 
 
 
