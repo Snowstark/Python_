@@ -13,7 +13,7 @@ class Settings():
         self.ship_speed_factor = 1
 
         # 子弹设计
-        self.bullet_width = 300
+        self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = 80, 60, 60
         self.bullets_allowed = 3
